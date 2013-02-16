@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <%= auto_discovery_link_tag :atom, "/feed" %>
+  <%= auto_discovery_link_tag :rss, "/feed.rss" %>
+<% end %>
+
+<h1>Steve Pavlina Reposted</h1>
+
+<p>Steve Pavlina's blog reposted one per day.</p>
+
+<p><%= link_to 'Feed', feed_path %></p>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post.url %></li>
+  <% end %>
+</ul>

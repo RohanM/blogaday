@@ -3,5 +3,5 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :url
 
-  scope :reposted, where('reposted_at IS NOT NULL').order('reposted_at ASC')
+  scope :reposted, where('reposted_at IS NOT NULL').order('reposted_at DESC')
 end

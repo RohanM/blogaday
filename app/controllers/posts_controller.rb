@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.reposted
+  end
+
   def feed
     @title = "Steve a Day"
     @posts = Post.reposted
